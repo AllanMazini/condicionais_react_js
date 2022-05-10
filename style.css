@@ -1,0 +1,29 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  #root {
+    width: 100%;
+    height: 100%;
+    font-family: "Lato",sans-serif;
+    font-size: 20px;
+    color: #171717;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #dbdbdb;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #bebebe, #dbdbdb,#f0f0f0, #dbdbdb,#bebebe);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #bebebe, #dbdbdb,#f0f0f0, #dbdbdb,#bebebe); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+
+  ul {
+    list-style-type: none;
+  }
+
+  li {
+    padding: 10px 0;
+  }

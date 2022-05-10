@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usando Condicionais com React.Js</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="root"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.1.0/umd/react.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.1.0/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+   
+    <script type="text/babel">
+
+    const ROCK_ROLL = 'ROCK_ROLL';
+    const WORSHIP = 'WORSHIP';
+
+    const RockRoll = () =>{
+         // PRIMEIRA FORMA TIRA O TYPE
+        // SEGUNDA FORMA com props = type | if(type!== ROCK_ROLL) return null;
+        // TERCEIRA FORMA TIRA O TYPE
+        return(
+            
+            <ul>
+                <li>Oficina G3</li>
+                <li>Metal Nobre</li>
+                <li>Fruto Sagrado</li>
+                <li>Novo Som </li>
+            </ul>
+           
+        )
+    }
+
+    const Worship = () =>{
+         // PRIMEIRA FORMA TIRA O TYPE
+       // SEGUNDA FORMA com props = type| if(type !== WORSHIP) return null;
+       // TERCEIRA FORMA TIRA O TYPE
+        return(
+            
+            <ul>
+                <li>Casa de Adoração</li>
+                <li>Central 3</li>
+                <li>Toma teu Lugar</li>
+                <li>FHOPE</li>
+            </ul>
+           
+        )
+    }
+
+    const PlayingToday = ({type}) =>{
+        //PRIMEIRA FORMA
+        
+        // if (type === ROCK_ROLL) {
+        //     return <RockRoll />
+        // }
+        // return <Worship /> ;
+    
+        //SEGUNDA FORMA
+
+        // return(
+        //     <React.Fragment>
+        //         <RockRoll type={type} />
+        //         <Worship type={type} />
+        //     </React.Fragment>
+        // )
+        
+       // TERCEIRA MAIS USADA
+       const isRockRoll = (type === ROCK_ROLL)
+       const isWorship = (type === WORSHIP)
+        
+       return(
+           <React.Fragment>
+            {isRockRoll && <RockRoll />}
+            {isWorship && <Worship />}
+            </React.Fragment>
+       )
+
+    }
+
+    ReactDOM.render(<PlayingToday type={ROCK_ROLL}/>, document.getElementById('root'));
+
+    </script>
+</body>
+</html>
